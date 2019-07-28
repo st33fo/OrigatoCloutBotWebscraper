@@ -12,7 +12,6 @@ from flask import Flask, render_template, session
 app = Flask(__name__)
 #I should comment my code
 
-
 '''
 Web driver will open up the chrome page and simulate whatever function
 your bot does. Feed it the URL and it goes to the page.
