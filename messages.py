@@ -6,8 +6,9 @@ messages.py - Message container class.
 
 
 class Message:
-    def __init__(self, owner_id=0, text='', reacts=0):
-        self.owner_id = owner_id
+    def __init__(self, owner_id=0, message_id=0, text='', reacts=0):
+        self._owner_id = owner_id
+        self._message_id = message_id
         self._text = text
         self._reacts = reacts
         self._replies = []
@@ -19,6 +20,14 @@ class Message:
     @owner_id.setter
     def owner_id(self, id_to_set):
         self._owner_id = id_to_set
+
+    @property
+    def message_id(self):
+        return self._message_id_id
+
+    @owner_id.setter
+    def message_id(self, mess_id_to_set):
+        self._owner_id = mess_id_to_set
 
     @property
     def text(self):

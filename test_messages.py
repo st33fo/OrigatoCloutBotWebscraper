@@ -25,6 +25,14 @@ class TestMessages(unittest.TestCase):
         test_item.owner_id = 2042
         self.assertEqual(2042, test_item.owner_id)
 
+    def test_message_id_getter_and_setter(self):
+        '''
+        desc: test message id getter and setter.
+        '''
+        test_item = messages.Message()
+        test_item.message_id = 2042
+        self.assertEqual(2042, test_item.message_id)
+
     def test_text_getter_and_setter(self):
         '''
         desc: test text id getter and setter.
