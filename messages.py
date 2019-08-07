@@ -6,28 +6,28 @@ messages.py - Message container class.
 
 
 class Message:
-    def __init__(self, owner_id=0, message_id=0, text='', reacts=0):
-        self._owner_id = owner_id
+    def __init__(self, owner_user_name='', message_id=0, text='', num_of_reacts=0):
+        self._owner_user_name = owner_user_name
         self._message_id = message_id
         self._text = text
-        self._reacts = reacts
+        self._num_of_reacts = num_of_reacts
         self._replies = []
 
     @property
-    def owner_id(self):
-        return self._owner_id
+    def owner_user_name(self):
+        return self._owner_user_name
 
-    @owner_id.setter
-    def owner_id(self, id_to_set):
-        self._owner_id = id_to_set
+    @owner_user_name.setter
+    def owner_user_name(self, name_to_set):
+        self._owner_user_name = name_to_set
 
     @property
     def message_id(self):
-        return self._message_id_id
+        return self._message_id
 
-    @owner_id.setter
+    @message_id.setter
     def message_id(self, mess_id_to_set):
-        self._owner_id = mess_id_to_set
+        self._message_id = mess_id_to_set
 
     @property
     def text(self):
@@ -38,12 +38,12 @@ class Message:
         self._text = text_to_set
 
     @property
-    def reacts(self):
-        return self._reacts
+    def num_of_reacts(self):
+        return self._num_of_reacts
 
-    @reacts.setter
-    def reacts(self, reacts_to_set):
-        self._reacts = reacts_to_set
+    @num_of_reacts.setter
+    def num_of_reacts(self, num_of_reacts_to_set):
+        self._num_of_reacts = num_of_reacts_to_set
 
     @property
     def replies(self):
@@ -52,6 +52,8 @@ class Message:
     @replies.setter
     def replies(self, replies_to_set):
         self._replies = replies_to_set
+
+
 
 
 
