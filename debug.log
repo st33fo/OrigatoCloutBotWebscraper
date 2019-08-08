@@ -8,3 +8,7 @@
 [0724/003031.532:ERROR:exception_snapshot_win.cc(98)] thread ID 18644 not found in process
 [0728/004604.225:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
 [0728/004604.256:ERROR:exception_snapshot_win.cc(98)] thread ID 17636 not found in process
+[0807/200942.934:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Stefan\AppData\Local\Temp\scoped_dir15312_30738\Crashpad\reports\d15b9338-163b-4c86-8817-f6933e6ff1b4.dmp: The system cannot find the path specified. (0x3)
+[0807/200943.505:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0807/201135.101:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0807/201135.439:ERROR:exception_snapshot_win.cc(98)] thread ID 21608 not found in process
