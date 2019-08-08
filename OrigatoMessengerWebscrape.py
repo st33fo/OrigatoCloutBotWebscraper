@@ -33,8 +33,8 @@ login once and open chrome once. The rest will just be in page refreshes.
 username = driver.find_element_by_id("email")
 password = driver.find_element_by_id("pass")
 
-userinput = 'Your user name'
-userpass = 'Your password'
+userinput = 'kimitachi2009@gmail.com'
+userpass = '1122310366662126212927'
 username.send_keys(userinput)
 password.send_keys(userpass)
    
