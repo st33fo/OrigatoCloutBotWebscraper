@@ -6,8 +6,8 @@ Created on Tue Jul 23 23:10:03 2019
 """
 
 from selenium import webdriver
-
 from flask import Flask, render_template, session
+import chat_member
 
 app = Flask(__name__)
 #I should comment my code
@@ -63,6 +63,35 @@ def messages():
     
     #returns an html page which has already been defined and prewritten
     return render_template('Messages.html', messages = messages)
+
+@app.route('/members')
+def members():
+    chatMembers = []
+    page = driver.find_element_by_class_name("_2sdm") 
+    subpage = page.find_element_by_class_name("_4_j4")
+    subpage2 = subpage.find_element_by_css_selector('._4u-c._1wfr._9hq')
+    members = subpage2.find_elements_by_css_selector('._1t_p.clearfix')
+    
+    '''
+    Now, this basically uses a very similar process to finding the message
+    except it finds the id of the member using a combination of tags and attributes.
+    I find the username of a member in the image tag, "img", then i use "get_attribute"
+    to get the value of "alt" which contains the user name. I go ahead and create
+    a list of ChatMember objects. I put in that alt attribute in the user_name parameter
+    of the ChatMember object. 
+    
+    I iterate through it in the Members.html
+    
+    FB also uses my nickname when it reads my messages haha. But that shouldn't matter
+    since this will be a bot account.
+    '''
+    
+    for item in members:
+        chatMembers.append(chat_member.ChatMember(item.find_element_by_tag_name('img').get_attribute('alt'),None))
+    
+    return render_template('Members.html',chatMembers = chatMembers)
+    
+    
 
 #makes it so that when I save, the server automatically reloads.
 if __name__ == "__main__":
